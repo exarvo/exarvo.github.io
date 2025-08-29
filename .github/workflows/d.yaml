@@ -9,8 +9,8 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Installing dependencies and building the code
       - uses: actions/checkout@v5
+      - name: Installing dependencies and building the code
         run: npm install && npm run build
 
       - name: Deploy site to gh-pages branch
