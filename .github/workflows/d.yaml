@@ -11,7 +11,9 @@ jobs:
     steps:
       - uses: actions/checkout@v5
       - name: Installing dependencies and building the code
-        run: npm install && npm run build
+        run: |
+          npm install
+          npm run build
 
       - name: Deploy site to gh-pages branch
         uses: crazy-max/ghaction-github-pages@v4
