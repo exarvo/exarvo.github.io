@@ -1,5 +1,5 @@
 import { Card } from "@/components/Card";
-import { SimpleLayout } from "@/components/SimpleLayout";
+import { Container } from "@/components/Container";
 import { formatDate } from "@/lib/formatDate";
 import { type ArticleWithSlug, getAllArticles } from "@/lib/getArticles";
 
@@ -32,13 +32,10 @@ function Article({ article }: { article: ArticleWithSlug }) {
   );
 }
 
-export default async function Home() {
+export default async function Articles() {
   const articles = await getAllArticles();
   return (
-    <SimpleLayout
-      title="Writing on Software Developement, Architecture and beyond"
-      intro="All the articles in chronological order by the time it was written"
-    >
+    <Container className="mt-16 sm:mt-32">
       <div className="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40">
         <div className="flex max-w-3xl flex-col space-y-16">
           {articles.map((article) => (
@@ -46,6 +43,6 @@ export default async function Home() {
           ))}
         </div>
       </div>
-    </SimpleLayout>
+    </Container>
   );
 }
