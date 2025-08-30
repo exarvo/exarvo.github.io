@@ -1,5 +1,6 @@
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { SITE_CONFIG } from "@/lib/siteConfig";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
@@ -17,29 +18,6 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
-
-// Constants for reusability and maintainability
-const SITE_CONFIG = {
-  name: "OG Blogger",
-  title: "Blogs",
-  description: "One stop place for all my blogs",
-  url: "https://exarvo.github.io",
-  author: {
-    name: "K A R S H",
-    twitter: "@exarvo",
-  },
-  keywords: [
-    "Machine Learning",
-    "ML",
-    "AI",
-    "Artificial Intelligence",
-    "Go",
-    "TypeScript",
-    "JavaScript",
-    "Web Development",
-    "Tech Blog",
-  ],
-};
 
 export const metadata: Metadata = {
   // Basic metadata
@@ -64,12 +42,13 @@ export const metadata: Metadata = {
   icons: {
     icon: [{ url: faviconIcon.src, sizes: "32x32", type: "image/png" }],
     apple: [{ url: appleIcon.src, sizes: "180x180", type: "image/png" }],
+    shortcut: faviconIcon.src,
   },
 
   // Open Graph metadata
   openGraph: {
     type: "website", // Changed from 'article' as this seems to be a blog listing page
-    locale: "en_US",
+    locale: SITE_CONFIG.locale,
     url: SITE_CONFIG.url,
     title: SITE_CONFIG.title,
     description: SITE_CONFIG.description,

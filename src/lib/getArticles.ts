@@ -13,7 +13,9 @@ interface Article {
   date: string;
   keywords: string[];
   content?: string;
-  // content: string;
+  updated?: string;
+  tags: string[];
+  category: string;
 }
 
 export interface ArticleWithSlug extends Article {
@@ -41,6 +43,9 @@ export async function importArticle(
       //   <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
       // ),
       content,
+      updated: data.updated || data.date,
+      tags: data.tags,
+      category: data.category,
     },
   };
 }

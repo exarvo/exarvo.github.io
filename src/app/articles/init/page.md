@@ -1,6 +1,12 @@
 ---
 description: >-
-  Introduction to the world
+  Initializing the Blogging Site
+title: Introduction to the world
+author: K A R S H
+date: 2025-07-17
+tags:
+  - Introduction
+category: General
 keywords:
   - Go Lang
   - Containerization
@@ -9,9 +15,6 @@ keywords:
   - TinyML
   - TensorFlow
   - Kubernetes
-date: 2025-07-17
-title: Initializing the Blogging Site
-author: K A R S H
 ---
 
 This is an introductory article on what this place is about. An initialization to set the stage.
@@ -46,6 +49,8 @@ There are a lot of To-Dos in Tech world, mine is a bit small but worth betting o
 - TensorFlow
 - Kubernetes
 
-Most of the above are core tech, and that's how you should start into tech. More on this only on: [exarvo](https://exarvo.github.io)
+Most of the above are core tech, and that's how you should start into tech.
+
+Originally posted on: [exar.hashnode.dev](https://exar.hashnode.dev)
 
 (The articles in this site are manually written and edited by the Author. No tools, technology/AI has been used or will ever be used for the aforementioned purposes.)

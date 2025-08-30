@@ -2,8 +2,12 @@ import { Card } from "@/components/Card";
 import { Container } from "@/components/Container";
 import { formatDate } from "@/lib/formatDate";
 import { type ArticleWithSlug, getAllArticles } from "@/lib/getArticles";
+import { metadata } from "../layout";
 
 function Article({ article }: { article: ArticleWithSlug }) {
+  metadata.title = article.title;
+  metadata.description = article.description;
+  metadata.keywords = article.keywords;
   return (
     <article className="md:grid md:grid-cols-4 md:items-baseline">
       <Card className="md:col-span-3">
