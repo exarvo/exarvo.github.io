@@ -48,6 +48,13 @@ jobs:
             echo "Unable to determine package manager"
             exit 1
           fi
+      - name: Branch
+        uses: actions/checkout@v5
+        with:
+          repository: ${{ secrets.NAME }}
+          token: ${{ secrets.PERSONALT }}
+          path: blog
+      - run: cp -r blog/home/. ./src/app/articles
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
