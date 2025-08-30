@@ -2,22 +2,8 @@ import { Card } from "@/components/Card";
 import { Container } from "@/components/Container";
 import { formatDate } from "@/lib/formatDate";
 import { type ArticleWithSlug, getAllArticles } from "@/lib/getArticles";
-import { Metadata } from "next";
 
-export const metadata = async (article: ArticleWithSlug): Promise<Metadata> => {
-  return {
-    title: {
-      default: article.title,
-      template: `%s | Lost in Translation`,
-    },
-    description: article.description,
-
-    keywords: article.keywords,
-  };
-};
-
-async function Article({ article }: { article: ArticleWithSlug }) {
-  await metadata(article);
+function Article({ article }: { article: ArticleWithSlug }) {
   return (
     <article className="md:grid md:grid-cols-4 md:items-baseline">
       <Card className="md:col-span-3">
