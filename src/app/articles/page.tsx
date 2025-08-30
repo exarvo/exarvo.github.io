@@ -2,12 +2,22 @@ import { Card } from "@/components/Card";
 import { Container } from "@/components/Container";
 import { formatDate } from "@/lib/formatDate";
 import { type ArticleWithSlug, getAllArticles } from "@/lib/getArticles";
-import { metadata } from "../layout";
+import { Metadata } from "next";
 
-function Article({ article }: { article: ArticleWithSlug }) {
-  metadata.title = article.title;
-  metadata.description = article.description;
-  metadata.keywords = article.keywords;
+export const metadata = async (article: ArticleWithSlug): Promise<Metadata> => {
+  return {
+    title: {
+      default: article.title,
+      template: `%s | Lost in Translation`,
+    },
+    description: article.description,
+
+    keywords: article.keywords,
+  };
+};
+
+async function Article({ article }: { article: ArticleWithSlug }) {
+  await metadata(article);
   return (
     <article className="md:grid md:grid-cols-4 md:items-baseline">
       <Card className="md:col-span-3">
